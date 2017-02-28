@@ -1,0 +1,13 @@
+breakpoint($point, $type = 'min')
+  $size = null
+
+  if $point is a 'string' || $point is a 'ident'
+    $size = $breakpoint.point[$point]
+
+  if $size == null
+    $size = $point
+
+  $query = 'screen and (' + $type + '-width: ' + $size + ')'
+
+  @media $query
+    {block}

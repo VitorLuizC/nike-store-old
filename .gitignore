@@ -1,0 +1,16 @@
+# Distribution folder
+dist/*
+dist
+
+# Dependencies
+node_modules/*
+node_modules
+
+# VS Code settings
+.vscode/*
+.vscode
+
+# Log files
+debug.log
+npm-debug.log
+npm-debug.log.*

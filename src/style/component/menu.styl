@@ -1,0 +1,48 @@
+$menu-toggler = {
+  width: 5rem,
+  height: .6rem,
+  border-radius: .8rem,
+  color: #000
+}
+
+.menu
+  & > .list
+    & > .item
+      font-size: 1.4rem
+      font-weight: bold
+
+  & > .toggler
+    position: relative
+    display: block
+    width: $menu-toggler.width
+    height: $menu-toggler.height
+    margin-top: $menu-toggler.height * 1.75
+    margin-bottom: @margin-top
+    border-radius: $menu-toggler.border-radius
+    background-color: $menu-toggler.color
+
+    +breakpoint(sm)
+      display: none
+
+    &::before
+    &::after
+      display: block
+      width: $menu-toggler.width
+      height: $menu-toggler.height
+      border-radius: $menu-toggler.border-radius
+      background-color: $menu-toggler.color
+      transition: transform .8s ease-out
+      content: ''
+
+    &::before
+      transform: translateY(-175%)
+
+    &::after
+      transform: translateY(75%)
+
+    &.active
+      background-color: transparent
+      &::before
+        transform: translateY(0) rotate(45deg)
+      &::after
+        transform: translateY(-100%) rotate(-45deg)

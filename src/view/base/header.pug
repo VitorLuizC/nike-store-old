@@ -1,0 +1,29 @@
+header.header
+  .container
+    figure.logo
+      img.image(src=require('../../asset/image/logo.png'), alt="Nike", title="Ícone da Nike")
+    nav(role="navigation").menu
+      -
+        const items = [
+          {
+            text: "Masculino",
+            href: "#"
+          },
+          {
+            text: "Feminino",
+            href: "#"
+          },
+          {
+            text: "Menino",
+            href: "#"
+          },
+          {
+            text: "Menina",
+            href: "#"
+          }
+        ]
+      button.toggler(type="button")
+      ul.list
+        each item in items
+          li.item
+            a(href=item.href) item.text

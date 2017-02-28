@@ -1,0 +1,23 @@
+root = true
+
+# Commmon source settings
+[*]
+charset = utf-8
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# JavaScript & JSON settings
+[*.{js,json}]
+indent_size = 2
+indent_style = space
+
+# Pug settings
+[*.pug]
+indent_size = 2
+indent_style = space
+
+# Stylus settings
+[*.styl]
+indent_size = 2
+indent_style = space

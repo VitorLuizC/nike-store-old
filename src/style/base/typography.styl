@@ -1,0 +1,28 @@
+$typography = {
+  scale: 62.5%,
+  font-size: 1.6rem,
+  font-family: "'Roboto', sans-serif"
+}
+
+@font-face
+  src: local('Roboto'),
+    local('Roboto-Regular'),
+    url('../asset/font/Roboto.woff') format('woff'),
+    url('../asset/font/Roboto.woff2') format('woff2')
+  font-family: 'Roboto'
+  font-weight: bold
+
+@font-face
+  src: local('Roboto'),
+    local('Roboto-Bold'),
+    url('../asset/font/Roboto-Bold.woff') format('woff'),
+    url('../asset/font/Roboto-Bold.woff2') format('woff2')
+  font-family: 'Roboto'
+  font-weight: bold
+
+:root
+  font-size: $typography.scale
+
+body
+  font-size: $typography.font-size
+  font-family: unquote($typography.font-family)
