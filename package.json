@@ -2,9 +2,10 @@
   "name": "nike-store",
   "version": "1.0.0",
   "description": "Fictitious Nike store using Stylus, Pug and Webpack.",
-  "main": "src/index.js",
+  "main": "./index.js",
   "scripts": {
     "clean": "del-cli ./dist",
+    "start": "node .",
     "watch": "npm run clean & webpack -d -w --env development",
     "build": "npm run clean & webpack -d --display-error-details --env development",
     "deploy": "npm run clean & webpack -p --env production"
@@ -39,5 +40,7 @@
     "stylus-loader": "^2.5.0",
     "webpack": "^2.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.14.1"
+  }
 }
