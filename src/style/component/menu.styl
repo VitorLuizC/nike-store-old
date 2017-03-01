@@ -1,13 +1,17 @@
 .menu
+  height: 100%
+
   & > .list
     display: flex
+    align-items: center
+    height: 100%
     list-style: none
 
     & > .item
-      margin-right: $menu.margin-x / 2
-      margin-left: @margin-right
+      margin-left: $menu.margin-x
       font-size: .875rem
       font-weight: bold
+      text-transform: uppercase
 
   & > .toggler
     position: relative
