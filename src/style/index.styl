@@ -1,21 +1,65 @@
-// Base settings
+// Base
+// ----
+// Reset, Alias, Typo and some default definition
+
+$typography = {
+  scale: 100%,
+  font-size: .875rem,
+  font-family: "'Roboto', sans-serif"
+}
+
 @import 'base/*'
 
-// Helper settings
+// Helpers
+// -------
+// Mixins and useful functions
+
 $breakpoint = {
   point: {
-    sm: 54.4rem / 1.6,
-    md: 102.4rem / 1.6,
-    lg: 128rem / 1.6,
-    xl: 160rem / 1.6
+    sm: 34rem,
+    md: 64rem,
+    lg: 80rem,
+    xl: 100rem
   }
 }
 
 $grid = {
-  cols: 12,
-  static-size: 7rem
+  cols: 12
 }
 
 @import 'helper/*'
+
+// Component
+// ---------
+// Application component styles.
+
+$banner = {
+  color: #ff5c2b
+}
+
+$footer = {
+  height: .375rem
+}
+
+$copyright = {
+  font-size: .875rem,
+  color: #999
+}
+
+$header = {
+  color: #fff
+  height: 4.5rem
+}
+
+$menu-toggler = {
+  width: 3.125rem,
+  height: .375rem,
+  border-radius: .5rem,
+  color: #000
+}
+
+$menu = {
+  margin-x: 2.5rem
+}
 
 @import 'component/*'
