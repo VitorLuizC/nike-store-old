@@ -12,7 +12,12 @@ const babelLoader = {
 const stylusLoader = {
   test: /\.styl$/,
   use: ExtractTextPlugin.extract({
-    use: ['css-loader', 'stylus-loader']
+    use: [{
+      loader: 'css-loader',
+      query: {
+        root: path.join(__dirname, './dist')
+      }
+    }, 'stylus-loader']
   })
 };
 
@@ -32,7 +37,7 @@ const imageLoader = {
     {
       loader: 'file-loader',
       query: {
-        name: 'img/[name].[ext]'
+        name: '/img/[name].[ext]'
       }
     },
     'image-webpack-loader'
@@ -45,7 +50,7 @@ const fontLoader = {
     {
       loader: 'file-loader',
       query: {
-        name: 'font/[name].[ext]'
+        name: '/font/[name].[ext]'
       }
     }
   ]

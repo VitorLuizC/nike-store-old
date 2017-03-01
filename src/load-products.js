@@ -17,20 +17,37 @@
 /**
  * Render products in a container.
  * @param {HTMLElement} container
- * @param {Array.<Product>} products
+ * @param {Product} product
  */
-function renderProducts(container, products) {
-  products.forEach(product => {
-    const item = document.createElement('div');
+function renderProduct(container, product) {
+  const item = document.createElement('div');
+  item.classList.add('product');
 
-    item.innerHTML = `
-      <figure class="">
-        <img src="${product.image}" alt="${product.title}" title="${product.title}">
-      </figure>
-    `;
+  item.innerHTML = `
+    <figure class="">
+      <img src="${product.image}" alt="${product.title}" title="${product.title}">
+    </figure>
+  `;
 
-    container.appendChild(item);
-  });
+  container.appendChild(item);
+}
+
+/**
+ * @typedef Products
+ * @property {Array.<Product>} best-sellers
+ * @property {Array.<Product>} releases
+ */
+
+/**
+ * Render products in their shelfs.
+ * @param {Products} products
+ */
+function renderProducts(products) {
+  const bestSellers = document.querySelector('.store > .best-sellers');
+  const releases = document.querySelector('.store > .releases');
+
+  products["best-sellers"].forEach(product => renderProduct(bestSellers, product));
+  products["releases"].forEach(product => renderProduct(releases, product));
 }
 
 /**
@@ -56,13 +73,7 @@ function loadProducts() {
         throw new Error(`Response to "${url}" has status ${response.status}.`);
       return response.json();
     })
-    .then(products => {
-      const bestSellers = document.querySelector('.store > .best-sellers');
-      const releases = document.querySelector('.store > .releases');
-
-      renderProducts(bestSellers, products["best-sellers"]);
-      renderProducts(releases, products["releases"]);
-    })
+    .then(renderProducts)
     .catch(error => renderError(error));
 }
 
