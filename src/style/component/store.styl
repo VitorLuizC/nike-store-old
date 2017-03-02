@@ -1,3 +1,77 @@
 .store
-  & > .shelf
-    display: flex
+  & > .container
+    & > .shelf
+      display: flex
+
+
+.control
+  display: flex
+  align-items: center
+  height: 4.5rem
+  margin-top: 1.625rem
+  border-bottom: 1px solid #ccc
+
+  & > .title
+    margin: 0
+
+  & > .checkbox
+    margin-right: 1.25rem
+    margin-left: @margin-right
+
+.product
+  box-sizing: border-box
+  width: calc(100% / 4 - 2.5rem)
+  margin-right: 1.25rem
+  margin-left: @margin-right
+  padding: 2.1865rem 2.8125rem
+  transition: border .8s ease-in
+
+  &.active
+    border: 1px solid #ccc
+
+    & > .customize
+      margin: 15.625rem 0 0
+
+    & > .button
+      display: block
+
+  & > .customize
+    margin: 1.5625rem 0 0
+    padding-bottom: .1875rem
+    border-bottom: 1px solid #ccc
+    font-size: .75rem
+    font-weight: bold
+    text-transform: uppercase
+    color: #666
+    transition: margin .8s ease-in
+
+    & > .icon
+      display: inline-block
+      width: 1rem
+      height: @width
+      vertical-align: sub
+      background-image: url('../asset/image/customize.jpg')
+
+  & > .title
+    margin: .625rem 0 0
+    font-weight: bold
+    color: #010101
+
+  & > .type
+    margin: .625rem 0 0
+    color: #999
+
+  & > .price
+    margin: .625rem 0 0
+    font-size: 1rem
+    font-weight: bold
+    color: #666
+
+  & > .installments
+    margin: .625rem 0 0
+    color: #666
+
+  & > .button
+    centralize(block)
+    display: none
+    margin-top: 1.25rem

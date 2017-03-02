@@ -1,5 +1,10 @@
 extends base/layout
 
+mixin checkbox(id, label)
+  fieldset.checkbox
+    input(type="checkbox", id=id)
+    label(for=id)!=label
+
 block content
   include base/header
 
@@ -10,15 +15,21 @@ block content
         img.image(src=require('../asset/image/banner.png'), alt="3 - Finish It", title="Jogador de futebol chutando uma bola e uma mensagem \"3 - Finish it\" com uma tipografia agressiva.")
 
     section.store
-      header.control
-      .error
-        h3 Ops!
-        p Tivemos um problema ao carregar os itens da loja.
-      .shelf.best-sellers
-      .shelf.releases
+      .container
+        header.control
+          h3.title Chuteiras HyperVenom:
+          +checkbox('high-top-filter', 'Cano Alto')
+          +checkbox('not-high-top-filter', 'Cano Baixo')
+          +checkbox('field-filter', 'Futebol Campo')
+          +checkbox('society-filter', 'Futebol Society')
+        #error.error
+          h3 Ops!
+          p Tivemos um problema ao carregar os itens da loja.
+        #best-sellers-shelf.shelf
+        #releases-shelf.shelf
 
     section#just-do-it.banner
-      figure.container
+      figure.container.-auto
         img.image(src=require('../asset/image/players.png'))
 
   include base/footer
