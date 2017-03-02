@@ -19,7 +19,7 @@ function animateParallaxBanner(container, image, calc) {
   const fullVisible = top < (screen - height);
 
   if (visible && !fullVisible)
-    percent = (height - (top - (screen - height))) / height * 100;
+    percent = ~~((-top + screen) / height * 100);
   image.style.transform = `translateY(${calc(percent)}%)`;
 
   requestAnimationFrame(() => animateParallaxBanner(container, image, calc));
