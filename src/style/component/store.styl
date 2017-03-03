@@ -24,6 +24,10 @@
   margin-top: 3rem
   margin-bottom: @margin-top
 
+  & > .products
+    height: 30rem
+    cursor: pointer
+
   & > .legend
     margin-top: 3rem
     font-size: 1rem
@@ -32,11 +36,19 @@
 
 .product
   box-sizing: border-box
-  width: calc(100% / 4 - 2.5rem)
+  width: calc(100% - 2.5rem)
+  height: 30rem
   margin-right: 1.25rem
   margin-left: @margin-right
   padding: 3.1865rem 2.8125rem
   transition: border .8s ease-in
+
+  +breakpoint(sm)
+    width: calc(100% / 2 - 2.5rem)
+
+  +breakpoint(md)
+    width: calc(100% / 4 - 2.5rem)
+
 
   &.active
     border: 1px solid #ccc

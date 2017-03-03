@@ -52,11 +52,11 @@ function renderProducts(products) {
   releasesShelf.clean();
 
   products['best-sellers'].forEach(product => {
-    bestSellersShelf.add(renderProduct(product))
+    bestSellersShelf.add(renderProduct(product));
   });
 
   products['releases'].forEach(product => {
-    releasesShelf.add(renderProduct(product))
+    releasesShelf.add(renderProduct(product));
   });
 }
 
@@ -65,8 +65,9 @@ function createShelf(selector) {
   const carousel = new Flickity(element, {
     prevNextButtons: false,
     contain: true,
-    imagesLoaded: true,
-    percentPosition: true
+    imagesLoaded: false,
+    percentPosition: true,
+    adaptiveHeight: true
   });
 
   return {
@@ -76,6 +77,15 @@ function createShelf(selector) {
       this.carousel.remove(this.element.querySelectorAll('.product'));
     },
     add(element) {
+      element.addEventListener('click', () => {
+        let elements = element.parentNode.querySelectorAll('.product');
+
+        Array
+          .from(elements)
+          .forEach(element => element.classList.remove('active'));
+
+        element.classList.add('active');
+      });
       this.carousel.append(element);
     }
   };

@@ -78,7 +78,7 @@ const config =  {
       template: 'src/view/index.pug'
     })
   ],
-  devtool: 'inline-source-map',
+  devtool: '#inline-source-map',
   target: "web"
 };
 
