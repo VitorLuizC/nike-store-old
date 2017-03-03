@@ -1,8 +1,6 @@
 .store
   & > .container
-    & > .shelf
-      display: flex
-
+    position: relative
 
 .control
   display: flex
@@ -18,19 +16,35 @@
     margin-right: 1.25rem
     margin-left: @margin-right
 
+  & > .button
+    position: absolute
+    right: 0
+
+.shelf
+  margin-top: 3rem
+  margin-bottom: @margin-top
+
+  & > .legend
+    margin-top: 3rem
+    font-size: 1rem
+    font-weight: bold
+    color: #010101
+
 .product
   box-sizing: border-box
   width: calc(100% / 4 - 2.5rem)
   margin-right: 1.25rem
   margin-left: @margin-right
-  padding: 2.1865rem 2.8125rem
+  padding: 3.1865rem 2.8125rem
   transition: border .8s ease-in
 
   &.active
     border: 1px solid #ccc
+    padding: 1.1865rem 2.8125rem
+    height: 100%
 
     & > .customize
-      margin: 15.625rem 0 0
+      margin: .675rem 0 0
 
     & > .button
       display: block

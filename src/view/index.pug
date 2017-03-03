@@ -22,14 +22,21 @@ block content
           +checkbox('not-high-top-filter', 'Cano Baixo')
           +checkbox('field-filter', 'Futebol Campo')
           +checkbox('society-filter', 'Futebol Society')
-        #error.error
-          h3 Ops!
-          p Tivemos um problema ao carregar os itens da loja.
-        #best-sellers-shelf.shelf
-        #releases-shelf.shelf
+          button#clean-filters.button(type="button") Todos os Produtos
+
+        #best-sellers.shelf
+          h3.legend Mais vendidos
+          .products
+
+        #releases.shelf
+          h3.legend Lançamentos
+          .products
 
     section#just-do-it.banner
       figure.container.-auto
         img.image(src=require('../asset/image/players.png'))
+        figcapton.message
+          h2.title Just Do It.
+          a.button(href="#") Todos os Produtos
 
   include base/footer

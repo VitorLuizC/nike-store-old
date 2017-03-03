@@ -1,16 +1,35 @@
 .banner
   background-color: $banner.color
+
   & > .container
+    position: relative
+    display: flex
+    justify-content: center
+
     & > .image
       centralize(block)
       display: block
+
+    & > .message
+      align-self: center
+      text-align: center
+      z-index: 1
+
+      & > .title
+        margin: 0
+        font-size: 4.5rem
+        font-weight: 900
+        text-transform: uppercase
+        color: #fff
 
 #just-do-it
   background: #000
 
   & > .container
-    overflow: hidden;
+    overflow: hidden
     height: 35.4375rem
+
     & > .image
+      position: absolute
       width: 100%
       opacity: .6
