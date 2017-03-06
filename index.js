@@ -4,6 +4,7 @@ const express = require('express');
 
 const config = {
   port: process.env.PORT || 9001,
+  host: process.env.IP || '127.0.0.1',
   callback() {
     console.log(`
       App was started!
